@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Generate Tokens</h2>
+
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Token Length</mat-label>
+      <input matInput type="number" formControlName="length" />
+      <mat-error *ngIf="form.controls['length'].hasError('required')"
+        >Length is required</mat-error
+      >
+      <mat-error *ngIf="form.controls['length'].hasError('min')"
+        >Length should be at least 1</mat-error
+      >
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="generateToken()">
+      Generate
+    </button>
+  </form>
+
+  <br /><br />
+
+  <h2>Generated Tokens</h2>
+</div>
